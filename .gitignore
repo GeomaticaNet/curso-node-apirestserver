@@ -2,3 +2,6 @@ node_modules/
 curso-node-restserver-1.0.0.zip
 .env
 env/
+
+uploads/productos/**.*
+uploads/usuarios/**.*
