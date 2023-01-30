@@ -17,7 +17,7 @@
   <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
     data-shape="rectangular" data-logo_alignment="left"></div>
 
-  <button id="google_signout" onclick="cerrarSesion()">Signout</button>
+  <button id="google_signout">Signout</button>
 
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
@@ -48,25 +48,20 @@
         .catch(console.warn);
     }
 
-    // const button = document.getElementById("google_signout");
-    // button.onclick = () => {
-    //   console.log(google.accounts.id);
-    //   google.accounts.id.disableAutoSelect();
-
-    //   google.accounts.id.revoke(localStorage.getItem("email"), (done) => {
-    //     localStorage.clear();
-    //     location.reload();
-    //   });
-    // };
-
-    function cerrarSesion() {
+    const button = document.getElementById("google_signout");
+    
+    button.onclick = () => {
+      console.log(google.accounts.id);
       google.accounts.id.disableAutoSelect();
 
-      google.accounts.id.revoke(localStorage.getItem('email'), done => {
+      google.accounts.id.revoke(localStorage.getItem("email"), (done) => {
         localStorage.clear();
         location.reload();
       });
+      console.log('Hola');
+
     };
+
 
   </script>
 </body>
